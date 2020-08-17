@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container"> 
 
-    <div v-if="!loading">
+    <div>
     
       <Form @onSearch='search'/>
 
@@ -11,9 +11,7 @@
     
     </div>
 
-    <div v-else>
-     loading? : {{loading}}
-    </div>
+    <Loading :loading="loading"></Loading>
   </div>
 </template>
 
@@ -22,6 +20,7 @@
 import Vue from 'vue'
 import ImageCard, {Item} from './components/ImageCard.vue';
 import Form from './components/Form.vue';
+import Loading from './components/Loading.vue';
 import {serializeArg} from './utils'
 
 // https://www.flickr.com/services/api/explore/flickr.photos.search
@@ -30,7 +29,8 @@ export default Vue.extend({
   name: 'App',
   components: {
     ImageCard,
-    Form
+    Form,
+    Loading
   },
   data() {
     return {

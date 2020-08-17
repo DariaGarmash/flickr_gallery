@@ -1,5 +1,5 @@
 interface Args {
-    [i: string]: string | boolean;
+    [i: string]: string | boolean | number;
 }
 
 export function serializeArg(obj: Args){

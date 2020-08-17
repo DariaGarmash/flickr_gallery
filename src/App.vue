@@ -35,8 +35,7 @@ export default Vue.extend({
   data() {
     return {
       loading: true,
-      list: [] as Item[],
-      searchInput: ''
+      list: [] as Item[]
     }
   },
   async created(){

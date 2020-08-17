@@ -3,7 +3,7 @@
     <form @submit.prevent='search' class="form" autocomplete="on">
         
           <input type="text" v-model="searchInput" :placeholder="placeholder"/>
-          <button type="submit" class="button primary">
+          <button type="submit" class="button">
             <slot>search</slot>
           </button>
         
@@ -28,6 +28,7 @@ export default Vue.extend ({
       searchInput: ''
     }
   },
+
   methods: {
     search(){
       this.$emit('onSearch', this.searchInput)
@@ -40,7 +41,7 @@ export default Vue.extend ({
 
 <style scoped lang='scss'>
 
-    @import './src/assets/variables';
+  @import './src/assets/variables';
 
   .form-holder{
     margin-bottom: 2rem;
@@ -48,8 +49,8 @@ export default Vue.extend ({
     justify-content: center;
 
     .form{
-      line-height: 30px;
-      font-size: 24px;
+      line-height: 1em;
+      font-size: 1em;
       display: inline-flex;
       width: 30%;
 
@@ -59,17 +60,31 @@ export default Vue.extend ({
 
       input{
         font-size: inherit;
+        line-height: inherit;
+        padding: 5px;
         flex-grow: 1;
         transition: $transtion-rule;
+        border: $border-size solid rgba($secondary, 0.5);
+        box-shadow: $box-shadow;
+        color: $secondary;
         &:not(:last-child){
-          margin-right: -2px;
+          margin-right: -($border-size);
         }
         &:focus{
-          border-color: $secondary;
+          outline: rgba($primary, 0.2);
         }
+
       }
-      button{
+      .button{
+        font-size: inherit;
+        line-height: inherit;
         background: $primary;
+        color: $white;
+        margin: 0;
+        border-color: transparent;
+         &:focus{
+          outline: none;
+        }
       }
       
     }

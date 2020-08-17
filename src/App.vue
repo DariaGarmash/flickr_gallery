@@ -98,7 +98,11 @@ export default Vue.extend({
 <style lang="scss">
 
   .container {
-    padding: 2rem 5rem;
+    padding: 5rem;
+
+    @media screen and (max-width: 700px){
+      padding: 2rem;
+    }
   }
 
   .img_list {

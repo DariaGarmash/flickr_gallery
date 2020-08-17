@@ -53,7 +53,7 @@ export default Vue.extend ({
   .card-holder{
     width: 350px;
     overflow: hidden;
-    border: 1px solid $secondary;
+    border: 1px solid rgba($secondary, 0.5);
     box-shadow: $box-shadow;
     transition: $transtion-rule;
     margin-right: 2em;
@@ -75,23 +75,11 @@ export default Vue.extend ({
     .image-holder{
       width: 100%;
       height: 250px;
-      background: $primary;
+      background: $secondary;
       background-size: cover;
       background-repeat: no-repeat;
       transition: $transtion-rule;
       position: relative;
-    
-      .meta{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        font-size: 80%;
-        padding: 2px 5px;
-        background: rgba(0,0,0, 0.8);
-        color: $white;
-        
-      }
     }
   }
 </style>

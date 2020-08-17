@@ -3,9 +3,10 @@
     
     <div class="image-holder" 
       :style="{ backgroundImage: `url(${imageURL})` }">
-      
+
     </div>
 
+    <div class="meta" v-if="item.tags">{{'#'+item.tags.split(' ').join(' #')}}</div>
   </article>
 </template>
 
@@ -58,6 +59,7 @@ export default Vue.extend ({
     transition: $transtion-rule;
     margin-right: 2em;
     margin-bottom: 2em;
+    position: relative;
 
     &:last-child{
       margin-right: 0;
@@ -65,11 +67,24 @@ export default Vue.extend ({
 
     &:hover{
       transform: scale(1.1);
+
+      .meta{
+        opacity: 1;
+        transform: translateZ(0);
+      }
     }
 
-    figure {
-      margin: 0;
-      height: 100%;
+    .meta {
+      padding: 5px;
+      background: darken($secondary, 0.5);
+      color: $white;
+      font-size: 80%;
+      opacity: 0;
+      bottom: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 1.5s;
     }
 
     .image-holder{
@@ -79,7 +94,6 @@ export default Vue.extend ({
       background-size: cover;
       background-repeat: no-repeat;
       transition: $transtion-rule;
-      position: relative;
     }
   }
 </style>

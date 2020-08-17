@@ -52,4 +52,6 @@ yarn lint
 - make `variables.scss` global in webpack settings
 - attach `reset-scss` file in webpack settings
 - consider to use lightweight library for components (for example [Buefy](https://buefy.org/))
+- make it possible to search by tag click on it
+- consider to render more inforamtion in ImageCard
 

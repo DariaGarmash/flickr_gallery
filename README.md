@@ -43,7 +43,7 @@ yarn lint
 ```
 
 
-### **Scalability**
+### **Further improvements**
 
 - implement infinite scroll to fetch more photos (for example [vue-infinite-loading](https://peachscript.github.io/vue-infinite-loading/guide/#installation))
 - include Font Awesome Icons
@@ -54,4 +54,5 @@ yarn lint
 - consider to use lightweight library for components (for example [Buefy](https://buefy.org/))
 - make it possible to search by tag click on it
 - consider to render more inforamtion in ImageCard
+- handle error state
 
